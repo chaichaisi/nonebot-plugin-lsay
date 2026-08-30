@@ -177,7 +177,7 @@ python nonebot_plugin_lsay/data/generate_homophone_json.py --compact          # 
 <details>
 <summary>展开/收起</summary>
 
-### 26.8.0
+### 26.8.1
 
 - 插件初次发布：谐音恶搞 + 语义块乱序整活机器人
 - 被动监听（单用户独立概率）+ 主动 `lsay` 命令（有无空格均可）
