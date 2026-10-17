@@ -99,7 +99,7 @@ nonebot-plugin-lsay = ["nonebot_plugin_lsay"]
 | lsay_global_prob_max | 50 | 全局概率上限 |
 | lsay_homo_prob | 0.35 | 谐音替换概率（0~1，内部参数） |
 | lsay_default_mode | mix | 魔改模式：shuffle（仅乱序）/ homo（仅谐音）/ mix（混合） |
-| lsay_state_file | lsay_state.json | 状态文件保存路径（相对 bot 运行目录） |
+| lsay_state_file | lsay_state.json | 状态文件名（保存在 localstore 插件数据目录） |
 
 示例：
 
@@ -176,6 +176,11 @@ python nonebot_plugin_lsay/data/generate_homophone_json.py --compact          # 
 
 <details>
 <summary>展开/收起</summary>
+
+### 26.10.1
+
+- 状态数据改由 nonebot-plugin-localstore 的 `get_plugin_data_dir()` 管理存储目录
+- 版本号更新至 26.10.1
 
 ### 26.8.1
 
