@@ -9,7 +9,21 @@ import random
 import threading
 from pathlib import Path
 
+from nonebot import require
+
+require("nonebot_plugin_localstore")
+
+import nonebot_plugin_localstore as localstore
+
 DEFAULT_GLOBAL_PROB = 5
+DEFAULT_STATE_FILE = "lsay_state.json"
+
+
+def _resolve_path(path) -> Path:
+    p = Path(path or DEFAULT_STATE_FILE)
+    if p.is_absolute():
+        return p
+    return localstore.get_plugin_data_dir() / p
 
 
 def _default_user():
@@ -17,8 +31,8 @@ def _default_user():
 
 
 class StateStore:
-    def __init__(self, path):
-        self.path = Path(path)
+    def __init__(self, path=None):
+        self.path = _resolve_path(path)
         try:
             self.path.parent.mkdir(parents=True, exist_ok=True)
         except OSError:
