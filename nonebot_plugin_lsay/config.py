@@ -20,7 +20,7 @@ class Config(BaseModel):
     lsay_homo_prob: float = 0.35
     # 魔改模式: shuffle | homo | mix
     lsay_default_mode: str = "mix"
-    # 状态文件保存路径（相对 NoneBot 运行目录）
+    # 状态文件名（保存在 localstore 插件数据目录；绝对路径则直接使用）
     lsay_state_file: str = "lsay_state.json"
     # 插件版本号
     lsay_version: str = Field(default=__version__)
